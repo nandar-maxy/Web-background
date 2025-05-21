@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Interaktif Simpel</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    #welcome {
+      height: 100vh;
+      background: #222;
+      color: white;
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column;
+    }
+    #welcome button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    #welcome button:hover {
+      background-color: #45a049;
+    }
+    #content {
+      display: none;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+    }
+    #content p {
+      font-size: 2em;
+      margin-top: 30vh;
+      text-shadow: 2px 2px 6px black;
+    }
+    #playPauseBtn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2196F3;
+      color: white;
+      cursor: pointer;
+    }
+    #playPauseBtn:hover {
+      background-color: #0b7dda;
+    }
+  </style>
+</head>
+<body>
+
+<div id="welcome">
+  <h1>Selamat Datang</h1>
+  <button id="enterBtn">Masuk</button>
+</div>
+
+<div id="content">
+  <p>"Hai ku ucapkan banyak terimakasih telah menjadi partner ke gereja , terimaksih pula dengan segala momen. Senang bisa mengenal mu walau belum begitu jauh . sampai bertemu di kesempatan kesempatan lainya kalau pun tidak semoga hal hal baik menyertaimu."</p>
+  <button id="playPauseBtn">Play Musik</button>
+</div>
+
+<audio id="bgMusic" src="https://raw.githubusercontent.com/musikwebku/audio/main/one_piece.mp3" loop></audio>
+
+<script>
+  const enterBtn = document.getElementById('enterBtn');
+  const welcome = document.getElementById('welcome');
+  const content = document.getElementById('content');
+  const bgMusic = document.getElementById('bgMusic');
+  const playPauseBtn = document.getElementById('playPauseBtn');
+
+  enterBtn.addEventListener('click', () => {
+    welcome.style.display = 'none';
+    content.style.display = 'block';
+    content.style.backgroundImage = 'url("https://drive.google.com/uc?export=view&id=1-GdQp8JEsH993FKwrpKVvD8Ynwb3XtlO")';
+  });
+
+  playPauseBtn.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play().catch(err => {
+        alert('Audio gagal diputar, coba lagi.');
+      });
+      playPauseBtn.textContent = 'Pause Musik';
+    } else {
+      bgMusic.pause();
+      playPauseBtn.textContent = 'Play Musik';
+    }
+  });
+</script>
+
+</body>
+</html>
