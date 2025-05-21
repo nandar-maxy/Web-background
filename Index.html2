@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Background</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://raw.githubusercontent.com/nandar-maxy/Web-background/main/IMG_20250513_204533.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .content {
+      padding-top: 20%;
+      background-color: rgba(0, 0, 0, 0.5); /* agar teks lebih mudah dibaca */
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Selamat datang di websitemu!</h1>
+    <p>Ini adalah latar belakang dari foto yang kamu unggah.</p>
+  </div>
+</body>
+</html>
